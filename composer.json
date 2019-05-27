@@ -1,0 +1,19 @@
+{
+  "name": "wslibs/faceocr",
+  "description": "认证",
+  "authors": [
+    {
+      "name": "SongYang",
+      "email": "475511896@qq.com"
+    }
+  ],
+  "license": "MIT",
+  "require": {
+    "php": ">=7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "wslibs\\faceocr\\": "src/"
+    }
+  }
+}
