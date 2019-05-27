@@ -5,7 +5,6 @@
  * Date: 2019-05-27
  * Time: 15:40
  */
-
 namespace wslibs\faceocr;
 
 class FaceOcr
