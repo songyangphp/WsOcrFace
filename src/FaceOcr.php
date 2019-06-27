@@ -10,6 +10,31 @@ namespace wslibs\faceocr;
 class FaceOcr
 {
     /**
+     * 人脸照片和身份证照片对比
+     * @param $idcard_img
+     * @param $face_img
+     * @param $type
+     * @return bool
+     */
+    public static function doFaceIdcardOcr($idcard_img, $face_img, $type)
+    {
+        $data = [
+            "idcard_img" => $idcard_img,
+            "face_img" => $face_img,
+            "type" => $type
+        ];
+
+        $request = json_decode(self::curlRequest("http://ocr.wszx.cc/?app=ocr@idcard",false,'post',$data),true);
+
+        if($request['code'] == '100'){
+            return $request['data']['score'];
+        }else{
+            return false;
+        }
+    }
+
+
+    /**
      * 人人对比
      * @param $img_1
      * @param $img_2
